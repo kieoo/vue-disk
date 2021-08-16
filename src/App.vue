@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
-        <img src="disk.svg" style="margin-top: -10px; height: 45px; ">
+        <img src="disk.svg" style="margin-top: -10px; height: 45px; "/>
         <router-link to="/">    MTest-Disk</router-link>
     </div>
     <router-view/>

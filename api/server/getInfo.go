@@ -2,6 +2,7 @@ package server
 
 import (
 	"api/model"
+	b64 "encoding/base64"
 	"io/ioutil"
 	"path/filepath"
 )
@@ -36,7 +37,9 @@ func(h *Handlers) GetDirContents(arg model.ArgMap) ([]model.InfoList, error) {
 		info.HasSubD = hasSubDirs(pathKey, fileInfo.Name())
 
 		if !fileInfo.IsDir() {
-			info.Url = h.HostName + "/getDetail?filename=info.Key"
+			fileNameBase64 := b64.URLEncoding.
+				EncodeToString([]byte(filepath.Join(pathKey, fileInfo.Name())))
+			info.Url = h.HostName + "/api/get-detail?filename=" + fileNameBase64
 		}
 
 		infoList = append(infoList, info)

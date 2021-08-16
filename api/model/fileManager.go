@@ -7,11 +7,13 @@ type FileManager struct {
 }
 
 type ArgMap struct {
-	PathInfo	[]PathMap 	`form:"pathInfo"`
-	Name 		string 		`form:"name"`
-	SourcePathInfo	[]PathMap	`form:"sourcePathInfo"`
+	PathInfo				[]PathMap 	`form:"pathInfo"`
+	PathInfoList			[][]PathMap	`form:"pathInfoList"`
+	Name 					string 		`form:"name"`
+	SourcePathInfo			[]PathMap	`form:"sourcePathInfo"`
 	DestinationPathInfo 	[]PathMap	`form:"destinationPathInfo"`
-	ChunkMetadata	string 	`form:"chunkMetadata"`
+	ChunkMetadata			string 	`form:"chunkMetadata"`
+	UploadId				string 	`form:"uploadId"`
 }
 
 type PathMap struct {

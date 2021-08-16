@@ -24,6 +24,7 @@ func main() {
 
 	v1.Any("/file-manager", server.FileManager)
 
+	v1.GET("/get-detail", server.GetDetail)
 
 	err := r.Run(GetRunPort())
 
