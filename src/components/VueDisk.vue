@@ -18,6 +18,8 @@
 
     <DxPopup
         :close-on-outside-click="true"
+        :visible="popupVisible"
+        :title="imageItemToDisplay.name"
         max-height="600"
         class="photo-popup-content">
       <img :src="imageItemToDisplay.url" class="photo-popup-image">
